@@ -1,0 +1,23 @@
+function rot13(str) {
+  let words = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
+  str = str.split("")
+  let array = ""
+
+  for(let i = 0; i< str.length; i++){
+    let isIn = false
+    for(let j = 0; j< words.length; j++){
+      if(str[i] == words[j]){
+        array += (words[(j+13)%(words.length)]);
+        isIn = true
+      }
+      }
+      if (!isIn){
+        array += str[i]
+      }
+  }
+  console.log(array)
+  return array;
+}
+
+rot13("SERR PBQR PNZC");
